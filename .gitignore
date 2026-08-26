@@ -1,0 +1,41 @@
+﻿# Entorno virtual
+.venv-AA1/
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+
+# Datos (no se versionan)
+data/raw/*
+data/processed/*
+!**/.gitkeep
+
+# Modelos entrenados
+*.pkl
+*.joblib
+*.h5
+*.pt
+models/
+
+# MLflow
+mlruns/
+mlartifacts/
+
+# Credenciales
+.env
+*.key
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store
