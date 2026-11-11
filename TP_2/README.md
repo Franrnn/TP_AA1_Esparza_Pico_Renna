@@ -21,12 +21,18 @@ El objetivo es predecir a las 23:59 de cada día si al día siguiente va a llove
 
 ## Cómo ejecutarlo
 
-Se usó Python 3.14. Todos los comandos se ejecutan desde la carpeta del proyecto, donde tienen que estar el notebook y el dataset.
+Se usó **Python 3.11**, porque PyCaret 3.3.2 no funciona con versiones más nuevas. Todos los comandos se ejecutan desde la carpeta del proyecto, donde tienen que estar el notebook y el dataset.
 
-1. Crear el entorno virtual:
+1. Crear el entorno virtual con Python 3.11. En Windows, con el lanzador `py`:
 
 ```bash
-python -m venv .venv
+py -3.11 -m venv .venv
+```
+
+En Linux o macOS:
+
+```bash
+python3.11 -m venv .venv
 ```
 
 2. Activarlo.
