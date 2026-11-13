@@ -1,6 +1,7 @@
 # Entorno virtual de Python (se recrea con: pip install -r requirements.txt)
 .entorno-aa1/
 .entorno-tp2/
+.venv/
 
 # Checkpoints automáticos de Jupyter
 .ipynb_checkpoints/
