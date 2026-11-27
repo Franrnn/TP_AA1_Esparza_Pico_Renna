@@ -1,0 +1,2 @@
+# El script de bash tiene que quedar con saltos de línea de Linux aunque se clone en Windows
+*.sh text eol=lf

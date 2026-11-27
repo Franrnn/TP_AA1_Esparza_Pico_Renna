@@ -15,11 +15,12 @@ El objetivo es predecir a las 23:59 de cada día si al día siguiente va a llove
 ```
 ├── TP-clasificacion-AA1.ipynb   # notebook con el desarrollo y las conclusiones
 ├── weatherAUS_2026C2.csv        # dataset
-├── requirements.txt             # librerías necesarias
+├── requirements.txt             # librerías necesarias para el notebook
+├── docker/                      # modelo elegido listo para usar con Docker (ver docker/README.md)
 └── README.md
 ```
 
-## Cómo ejecutarlo
+## Cómo ejecutar el notebook
 
 Se usó **Python 3.11**, porque PyCaret 3.3.2 no funciona con versiones más nuevas. Todos los comandos se ejecutan desde la carpeta del proyecto, donde tienen que estar el notebook y el dataset.
 
@@ -61,4 +62,14 @@ pip install -r requirements.txt
 jupyter notebook TP-clasificacion-AA1.ipynb
 ```
 
-La ejecución completa tarda unos 5 minutos. La parte más lenta es la imputación con KNN.
+La ejecución completa tarda unos 20 minutos. Las partes más lentas son la imputación con KNN, la búsqueda de hiperparámetros de la red y su explicación con SHAP. La sección 30 vuelve a generar `docker/modelo.joblib` y `docker/lluvia_ejemplo.csv`.
+
+## Cómo ejecutar el Docker
+
+El modelo elegido (la red neuronal optimizada) está listo para usar en la carpeta `docker/`, con todo lo que necesita para predecir sin el notebook y sin conexión a internet. Hace falta tener Docker instalado y abierto, y una terminal de bash (en Windows, Git Bash). Desde la carpeta `docker/`:
+
+```bash
+./ejecutar.sh lluvia_ejemplo.csv predicciones.csv
+```
+
+El script arma la imagen (`docker build`) y corre el contenedor (`docker run`) con el CSV de entrada, que tiene que tener las columnas originales del dataset y estar en esa carpeta. El resultado, `predicciones.csv`, es el mismo CSV con la probabilidad de lluvia de cada día (`prob_lluvia`) y la predicción (`llueve_manana`). El detalle de los dos comandos y del formato de entrada está en `docker/README.md`.

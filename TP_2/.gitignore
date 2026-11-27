@@ -1,0 +1,13 @@
+# Entorno virtual de Python (se recrea con: pip install -r requirements.txt)
+.entorno-aa1/
+.entorno-tp2/
+
+# Checkpoints automáticos de Jupyter
+.ipynb_checkpoints/
+
+# Caché de Python
+__pycache__/
+*.pyc
+
+# Registro que genera PyCaret al importarse
+logs.log
